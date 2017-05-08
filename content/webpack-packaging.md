@@ -1,6 +1,6 @@
-1. 关于使用webpack打包vue项目时，页面中静态文件(css/img)引入问题。
+### 关于使用webpack打包vue项目时，页面中静态文件(css/img)引入问题。
 	1). 项目使用vue-cli创建(vue init webpack-simple packageName)
-	2). 静态文件引入方式(eg:	'./assets/img/phone.png')
+	2). 静态文件引入方式(eg：'./assets/img/phone.png')
 	3). webpack.config.js 中配置
 		{
 		  entry: './src/main.js',
