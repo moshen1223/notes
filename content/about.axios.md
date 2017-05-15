@@ -25,3 +25,21 @@ methods: {
         });    
     }    
 }
+
+##### vue中通过axios做GET请求时，参数格式问题
+
+this.$http.get(url, {    
+
+        params:{
+            pageSize: 10,
+            pageNo: _this.currentPage-1
+        },
+        headers: {
+          'Authorization': APIHelper.Authorization
+        }
+      }).then(function(response){
+        response = response.data;
+        console.log(response);
+      }).catch(function(error){
+        console.log(error);
+      });
