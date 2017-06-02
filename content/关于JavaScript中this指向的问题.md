@@ -36,7 +36,8 @@
       newobj(); // true
 
   ##### call和apply对this的影响
-    注意：如果函数本身是一个绑定了this对象的函数eeg: 
+    注意：如果函数本身是一个绑定了this对象的函数.   
+    eg:    
       const obj = {};
       function test(){
         console.log(this == obj);
