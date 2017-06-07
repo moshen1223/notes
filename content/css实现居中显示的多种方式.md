@@ -100,3 +100,107 @@
         <div class="parent4">
           <div class="son4"></div>
         </div>
+##### 关于垂直居中   
+    1.行内元素使用，line-height: 父元素高度
+    
+    2.块级元素
+     1) vertical-align: middle
+      .parent{
+       height: 200px;
+       border: 1px solid #999;
+      }
+      .son{
+       width: 100px;
+       height: 100px;
+       background: #f90;
+       display: inline-block;
+       vertical-align: middle;
+      }
+      .parent span{
+       height: 100%;
+       display: inline-block;
+       vertical-align: middle;
+      }
+      <div class="parent">
+       <div class="son"></div>
+       <span></span>
+      </div>
+      
+     2) vertical-align: middle 配合 table 使用
+      .parent{
+       height: 200px;
+       border: 1px solid #999;
+       display: table;
+      }
+      .son{
+       background: #f90;
+       display: table-cell;
+       vertical-align: middle;
+      }
+      <div class="parent">
+       <div class="son">
+        高度不固定
+       </div>
+      </div>
+      
+     3) 使用flex布局 align-items: center; (笔者推荐---简单)
+      .parent{
+       height: 200px;
+       border: 1px solid #999;
+       display: flex;
+       align-items: center;
+      }
+      <div class="parent">
+       <div class="son">
+        高度不固定
+       </div>
+      </div>
+      
+     4) 使用transform
+      .parent{
+       position: relative;
+       height: 200px;
+       border: 1px solid #999;
+      }
+      .son{
+       position: absolute;
+       top: 50%;
+       -webkit-transform: translate(0,-50%);
+      }
+      <div class="parent">
+       <div class="son">
+        高度不固定
+       </div>
+      </div>
+      
+     5) 绝对定位 负margin
+      .parent {
+       position: relative;
+       height: 300px;
+       border: 1px solid #999;
+      }
+      .son{
+       position: absolute;
+       width: 100px;
+       height: 100px;
+       background: #f90;
+       top: 50%;
+       margin-top: -50px;
+      }
+      <div class="parent">
+       <div class="son"></div>
+      </div>
+      
+     6) 绝对定位 同时设置top和bottom
+      .son{
+          position:absolute;
+          height:100px;
+          width: 100px;
+          top:0;
+          bottom:0;
+          margin:auto 0;
+          background: #f90;
+      }
+      <div class="parent">
+       <div class="son"></div>
+      </div>
