@@ -90,3 +90,59 @@
     const arrow = obj.getArrow();
     arrow(); // true
     两个this都是由箭头函数的直接外层函数决定的，而方法函数中的this是由其调用方式决定的。
+    
+  ##### 当this碰到return时
+    如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例。
+    (null比较特殊，虽然是对象，但是这里的this还是指向函数实例。)    
+    
+  ##### 对 当this碰到return时对 this指向的是调用它的那个对象 补充
+    eg:
+    var obj = {
+      user: 'moshen',
+      fn: function(){
+        console.log(this.user); // moshen
+      }
+    }
+    window.obj.fn();
+    eg:
+    var obj = {
+      a: 10,
+      b: {
+        a: 12,
+        fn: function(){
+          console.log(this.a); //12
+        }
+      }
+    }
+    obj.b.fn();    
+    
+    情况1： 如果一个函数中有this,但是没有被上一级的对象所调用，那么this指向的就是window.
+    情况2： 如果一个函数中有this,这个函数有被上一级的对象所调用，那么这个this指向的就是上一级对象。
+    情况3： 如果一个函数中有this，这个函数包含多个对象，尽管这个函数是被最外层的对象所调用，this指向的也只是它上一级的对象。
+    eg:
+      var obj = {
+        a: 10,
+        b: {
+          // a: 12,
+          fn: function(){
+            coonsole.log(this.a); // undefined
+          }
+        }
+      } 
+      obj.b.fn();
+    情况4： this永远指向的是最后调用它的对象，看执行的时候是谁调用的。
+    eg: 
+      var obj = {
+        a: 10,
+        b: {
+          a: 12,
+          fn: function(){
+            console.log(this.a); //undefined
+            console.log(this); //window
+          }
+        }
+      }
+      var j = obj.b.fn;
+      j();
+
+  
