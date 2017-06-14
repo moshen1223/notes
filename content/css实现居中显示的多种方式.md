@@ -1,4 +1,4 @@
-  ##### 关于水平居中   
+#### 关于水平居中   
   
     1.行内元素使用，text-align：center
     
@@ -100,7 +100,9 @@
         <div class="parent4">
           <div class="son4"></div>
         </div>
-##### 关于垂直居中   
+        
+#### 关于垂直居中   
+
     1.行内元素使用，line-height: 父元素高度
     
     2.块级元素
