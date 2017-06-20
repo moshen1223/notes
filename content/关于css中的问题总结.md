@@ -56,4 +56,82 @@
 				<p>center content</p>
 				<p>center content</p>
 			</div>
+		</div>		
+	3) 固定宽度的等高布局，方法繁琐
+		.container {
+			width: 960px;
+			margin: 0 auto;
+		}
+		.rightWrap {
+			width: 100%;
+			float: left;
+			background: green;
+			overflow: hidden;
+			position: relative;
+		}
+		.contentWrap {
+			float: left;
+			background: orange;
+			width: 100%;
+			position: relative;
+			right: 320px;/*此值等于rightSidebar的宽度*/
+		}
+		.leftWrap{
+			width: 100%;
+			background: lime;
+			float:left;
+			position: relative;
+			right: 420px;/*此值等于Content的宽度*/
+		}
+		#left {
+			float: left;
+			width: 220px;
+			overflow: hidden;
+			position: relative;
+			left: 740px;
+		}
+		#content {
+			float: left;
+			width: 420px;
+			overflow: hidden;
+			position:relative;
+			left: 740px;
+		}
+		#right {
+			float: left;
+			overflow: hidden;
+			width: 320px;
+			position: #333;
+			position: relative;
+			left: 740px;
+		}
+		<div class="container" >
+			<div class="rightWrap" >
+				<div class="contentWrap" >
+					<div class="leftWrap" >
+						<div class="column" id="left">
+							<p>left</p>
+							<p>left</p>
+							<p>left</p>
+							<p>left</p>
+							<p>left</p>
+						</div>
+						<div class="column" id="content">
+							<p>content</p>
+							<p>content</p>
+							<p>content</p>
+							<p>content</p>
+							<p>content</p>
+							<p>content</p>
+							<p>content</p>
+							<p>content</p>
+							<p>content</p>
+							<p>content</p>
+						</div>
+						<div class="column" id="right">
+							<p>right</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
