@@ -5,6 +5,12 @@
 	4) line-height等相对于自身字号
 	5) border-radius、background-size、transform：translate()、transform-origin、zoom、cli-path等；
 
+###### 2、CSS实现左右定宽，中间自适应(左边定宽，右边自适应)
+	1) 浮动布局
+		左边浮动，右边加上一个margin-left值
+	2) 定位布局
+	 	自适应模块同时设置left和right
+
 ###### 3、CSS实现等高布局
 	1) 使用背景图片，假等高列
 	2) padding正值，margin负值实现填充
