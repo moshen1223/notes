@@ -1,4 +1,13 @@
-### 关于使用webpack打包vue项目时，页面中静态文件(css/img)引入问题。
+##### 关于vue项目打包后，在浏览器中刷新的问题。
+	1). 原因： 因为路由采用了HTML5的history模式，如果服务端未做处理，在浏览器中刷新出现404；
+	2). 解决方法：
+		const router = new VueRouter({
+		  history: false,
+		  hashbang: true
+		  ...
+		});
+
+##### 关于使用webpack打包vue项目时，页面中静态文件(css/img)引入问题。
 	1). 项目使用vue-cli创建(vue init webpack-simple packageName)
 	2). 静态文件引入方式(eg：'./assets/img/phone.png')
 	3). webpack.config.js 中配置
