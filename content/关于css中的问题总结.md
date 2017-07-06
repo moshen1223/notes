@@ -134,4 +134,12 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		
+		
+###### 3、CSS实现函数固定超过显示...    
+
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
