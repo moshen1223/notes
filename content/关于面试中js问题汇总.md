@@ -31,13 +31,13 @@
 &emsp;&ensp;与服务器端通信：每次都会携带在http头中       
 &emsp;&ensp;使用方法：         
 &emsp;&emsp;设置 document.cookie = "key=value;key=value"  使用escape()编码，使用unescape()解码;    
-&emsp;&emsp;可设置cookie的生存期： document.cookie = "key=value; expiress=GMT_String";    
+&emsp;&emsp;可设置cookie的生存期： document.cookie = "key=value; expires=GMT_String";    
 &emsp;&emsp;获取cookie  document.cookie 得到该域名下的所有cookie需要开发人员自己拆分;    
 &emsp;&emsp;删除cookie  将cookie的生存期设置为过去时间即可；    
-&emsp;&emsp;指定可访问的路径：document.cookie="key=value; expiress=GMT_string; path=/";    
+&emsp;&emsp;指定可访问的路径：document.cookie="key=value; expires=GMT_string; path=/";    
 &emsp;&emsp;指定可访问的主机名：document.cookie="key=value; domain=cookieDomain";    
 &emsp;localStorage：      
-&emsp;&ensp;生命期：除非被清楚，否则永远保存    
+&emsp;&ensp;生命期：除非被清除，否则永远保存    
 &emsp;&ensp;大小：5M左右    
 &emsp;&ensp;与服务器端通信：仅在客户端中保存，不参与和服务器的通信    
 &emsp;&ensp;自身带有一些方法：    
