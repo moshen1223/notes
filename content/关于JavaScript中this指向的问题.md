@@ -125,7 +125,7 @@
         b: {
           // a: 12,
           fn: function(){
-            coonsole.log(this.a); // undefined
+            console.log(this.a); // undefined
           }
         }
       } 
