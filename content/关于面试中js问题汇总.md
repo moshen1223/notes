@@ -50,6 +50,32 @@
 &emsp;sessionStorage：    
 &emsp;&ensp;生命期：仅在当前会话下有效，关闭页面或浏览器后被清楚     
 &emsp;&ensp;大小：5M左右     
-&emsp;&ensp;与服务器端通信：仅在客户端中保存，不参与和服务器的通信     
+&emsp;&ensp;与服务器端通信：仅在客户端中保存，不参与和服务器的通信    
+
+4、ES6 箭头函数     
+&emsp;&ensp;箭头函数几个特性： 不能被new、this被绑定为函数定义时的this且无法改变、不支持arguments    
+&emsp;&ensp;不能被new的原因：箭头函数内部没有constructor方法，也没有prototype    
+&emsp;&ensp;没有自己的this，箭头函数内的this值继承自外围函数值     
+    
+5、JS中检测数据类型的方式    
+&emsp;1)typeof    
+&emsp;&ensp;局限性：typeof null => object；检测数组、正则返回object    
+&emsp;2)instanceof/constructor    
+&emsp;&ensp;检测某一实例是否属于某一类     
+&emsp;&ensp;局限性：    
+&emsp;&emsp;1' 用instanceof检测的时候，只要当前的这个类在实例的原型链上，检测的结果都为true    
+&emsp;&emsp;2' 基本数据类型不能用instanceof检测     
+&emsp;&emsp;3' 在类的原型继承中，instanceof检测出来的结果是不精确的    
+&emsp;3)object.prototype.toString.call(value)    
+&emsp;4)object.prototype.toString    
+
+6、JavaScript中的跨域    
+&emsp;原因：同源策略限制(协议、端口号、域名)    
+&emsp;方法：    
+&emsp;&emsp;1) document.domain + iframe     
+&emsp;&emsp;2) jsonp    
+&emsp;&emsp;3) iframe location.hash    
+&emsp;&emsp;4) window.name     
+&emsp;&emsp;5) postMessage
 
 
