@@ -3,7 +3,7 @@
 	2) height、top、bottom等相对于父元素的高度
 	3) font-size等相对于继承字号
 	4) line-height等相对于自身字号
-	5) border-radius、background-size、transform：translate()、transform-origin、zoom、cli-path等；
+	5) border-radius、background-size、transform：translate()、transform-origin、zoom、cli-path等相对于自身宽高
 
 ###### 2、CSS实现左右定宽，中间自适应(左边定宽，右边自适应)
 	1) 浮动布局
@@ -136,7 +136,7 @@
 			</div>
 		
 		
-###### 3、CSS实现函数固定超过显示...    
+###### 3、CSS实现行数固定超过显示...    
 	display: -webkit-box;
 	overflow: hidden;
 	text-overflow: ellipsis;
