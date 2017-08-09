@@ -76,6 +76,11 @@
 &emsp;&emsp;2) jsonp    
 &emsp;&emsp;3) iframe location.hash    
 &emsp;&emsp;4) window.name     
-&emsp;&emsp;5) postMessage
+&emsp;&emsp;5) postMessage    
 
+7、jsonp原理
+
+8、mvc/mvp/mvvm三者之间的区别
+
+ 
 
