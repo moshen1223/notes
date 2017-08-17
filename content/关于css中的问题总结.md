@@ -136,9 +136,21 @@
 			</div>
 		
 		
-###### 3、CSS实现行数固定超过显示...    
+###### 4、CSS实现行数固定超过显示    
 	display: -webkit-box;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
+		
+###### 5、css盒模型    
+	 css盒模型分为两种：IE盒模型（怪异模型）和标准盒模型.
+	 IE盒模型的宽度：width = content;
+	 标准盒模型宽度：width = content + padding + border;
+	 box-sizing属性解决盒模型问题，有三个属性值：content-box|border-box|inherit;
+	 默认值content-box,此时遵循标准盒模型;
+	 如果值为border-box,遵循IE模型;
+	 值为inherit，从父元素继承;
+	 
+	 
+	
