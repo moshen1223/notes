@@ -81,9 +81,10 @@
 7、jsonp原理    
 &emsp;&emsp;动态创建一个script标签,因为script标签里边的src属性没有同源限制,src请求指定的URL,通过callback回调接收.    
 
-8、mvc/mvp/mvvm三者之间的区别     
-
-
+8、mvc/mvp/mvvm三者之间的区别    
+&emsp;&emsp;mvc: view -> controller -> model -> view    
+&emsp;&emsp;mvp: view -> presenter -> model -> presenter -> view    
+&emsp;&emsp;mvvm: view <-> view-model <-> model
 
  
 
