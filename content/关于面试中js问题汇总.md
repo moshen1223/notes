@@ -84,7 +84,32 @@
 8、mvc/mvp/mvvm三者之间的区别    
 &emsp;&emsp;mvc: view -> controller -> model -> view    
 &emsp;&emsp;mvp: view -> presenter -> model -> presenter -> view    
-&emsp;&emsp;mvvm: view <-> view-model <-> model
+&emsp;&emsp;mvvm: view <-> view-model <-> model    
+
+9、将CSS中的类名变成驼峰命名
+
+    方法一    
+      var str = 'css_style_color_red';
+      var arr = [];
+      arr = str.split('_')
+      for(var i = 1; i< arr.length; i++){
+        arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+      }
+      var newStr = arr.join();
+      while(newStr.match(/\,/)){
+        newStr = newStr.replace(',','')
+      }
+      console.log(newStr)
+    方法二(推荐)    
+      var str = 'css_style_color_red';
+      var reg = /\_[a-zA-Z]/g;
+      var arr = str.match(reg);
+      for(var i=0; i<arr.length; i++) {
+        str = str.replace(arr[i],arr[i].substring(1).toUpperCase())
+      }
+      console.log(str)
+
 
  
 
