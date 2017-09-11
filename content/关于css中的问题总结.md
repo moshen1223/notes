@@ -151,7 +151,21 @@
 	 box-sizing属性解决盒模型问题，有三个属性值：content-box|border-box|inherit;
 	 默认值content-box,此时遵循标准盒模型;
 	 如果值为border-box,遵循IE模型;
-	 值为inherit，从父元素继承;
+	 值为inherit，从父元素继承;     
+	 
+###### 6、HTML中<!DOCTYPE>的作用,标准模式和兼容模式的区别,为什么HTML5文档头可以简写?   
+	标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,
+	模拟老式浏览器的行为以防止站点无法工作。    
+	HTML5 不基于 SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行。
+	而HTML4.01基于SGML,所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型。    
+			
+###### 7、常见的浏览器内核    
+	 Trident：IE
+	 Gecko：Firefox
+	 Presto：Opera    
+	 Webkit：chrome
+			
+
 	 
 	 
 	
