@@ -108,8 +108,9 @@
       for(var i=0; i<arr.length; i++) {
         str = str.replace(arr[i],arr[i].substring(1).toUpperCase())
       }
-      console.log(str)
-
+      console.log(str)    
+ 
+10、js中递归函数以及arguments.callee的使用 
 
  
 
