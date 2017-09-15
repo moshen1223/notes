@@ -110,7 +110,7 @@
       }
       console.log(str)    
  
-10、js中递归函数以及arguments.callee的使用 
+10、js中递归函数以及arguments.callee的使用,使用arguments.callee指向原函数.
 
  
 
