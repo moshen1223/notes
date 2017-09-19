@@ -112,7 +112,9 @@
  
 10、js中递归函数以及arguments.callee的使用,使用arguments.callee指向原函数.    
  
-11、javascript中的设计模式.
+11、javascript中的设计模式.    
+
+12、javascript如何实现继承.
 
  
 
