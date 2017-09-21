@@ -113,6 +113,7 @@
 10、js中递归函数以及arguments.callee的使用,使用arguments.callee指向原函数.    
  
 11、javascript中的设计模式.    
+&emsp;工厂模式、 桥接模式、 组合模式、 门面模式、 适配器模式、 装饰着模式    
 
 12、javascript如何实现继承.
 
