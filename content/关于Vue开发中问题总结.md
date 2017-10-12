@@ -19,7 +19,7 @@
 
 　　assetsPublicPath 指静态资源的引用路径，默认配置为 /，即网站根目录，与 assetsSubDirectory 组合起来就是完整的静态资源引用路径 /static。
 
-　　写到这里解决方法已经很明显了，只要把根目录改为相对目录就好了：
+　　到这解决方法已经很明显了，只要把根目录改为相对目录就好了：
 
 　　build.assetsSubDirectory: 'static'    
 
