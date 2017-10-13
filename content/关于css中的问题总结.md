@@ -163,7 +163,21 @@
 	 Trident：IE
 	 Gecko：Firefox
 	 Presto：Opera    
-	 Webkit：chrome
+	 Webkit：chrome    
+	 	 
+###### 8、设置input中placeholder的颜色   
+	::-webkit-input-placeholder { /* WebKit browsers */
+	    color:#999;
+	}
+	:-moz-placeholder { /* Mozilla Firefox */
+	    color:    #999;
+	}    
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color:    #999;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10+ */
+	    color:    #999;
+	}   
 			
 
 	 
