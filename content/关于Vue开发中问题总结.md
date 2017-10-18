@@ -4,13 +4,11 @@
 
 　　这是由于 vue-cli 默认配置的 webpack 是以站点根目录引用的文件，然而有时候我们可能需要把项目部署到子目录中。
 
-　　我们可以通过 config/index.js 来修改文件引用的相对路径：
+　　我们可以通过 config/index.js 来修改文件引用的相对路径:    
+                
 　　build.assetsSubDirectory: 'static'    
-
-　　build.assetsPublicPath: '/'    
-
+  　　build.assetsPublicPath: '/'    
 　　dev.assetsSubDirectory: 'static'    
-
 　　dev.assetsPublicPath: '/'    
     
     我们可以看到导出对象中 build 与 dev 均有 assetsSubDirectory、assetsPublicPath 这两个属性。
