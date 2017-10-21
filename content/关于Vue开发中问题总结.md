@@ -21,4 +21,6 @@
 
 　　build.assetsSubDirectory: 'static'    
 
-　　build.assetsPublicPath: './'
+　　build.assetsPublicPath: './'    
+  2. 在vue组件中经常需要给style添加scoped属性来使得当前样式只作用于当前组件的节点。编译之后会将当前组件的节点添加一个像data-v-e0329592这样唯一属性的标识，也会给当前style的所有样式添加[data-v-e0329592]（eg: .user[data-v-e0329592]）， data-v-e0329592整个页面相同.
+  
