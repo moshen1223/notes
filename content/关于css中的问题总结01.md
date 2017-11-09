@@ -177,7 +177,10 @@
 	}
 	:-ms-input-placeholder { /* Internet Explorer 10+ */
 	    color:    #999;
-	}   
+	}    
+			
+###### 9、css中z-index的问题    
+	 在页面布局中父元素的z-index值会影响到子元素的层级
 			
 
 	 
