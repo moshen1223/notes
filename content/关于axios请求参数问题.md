@@ -4,6 +4,7 @@
 问题： {"email":"moshen@moshen.name","password":"123456"}
 
 解决方法:    
+    千万别用JSON.stringify() 有坑, 后边多一个:
 
     const querystring = require('querystring');    
     methods: {    
