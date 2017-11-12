@@ -77,6 +77,7 @@
 &emsp;&emsp;3) iframe location.hash    
 &emsp;&emsp;4) window.name     
 &emsp;&emsp;5) postMessage    
+&emsp;&emsp;6) 服务端解决，通过设置CORS     
 
 7、jsonp原理    
 &emsp;&emsp;动态创建一个script标签,因为script标签里边的src属性没有同源限制,src请求指定的URL,通过callback回调接收.    
