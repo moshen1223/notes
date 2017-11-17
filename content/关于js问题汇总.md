@@ -14,7 +14,7 @@
 &emsp;&emsp;typeof null   // "object"    
 &emsp;&emsp;typeof undefined  // "undefined"    
 &emsp;&ensp;3) 使用方面：     
-&emsp;&emsp;null表示“没有对象”，此处不应该有值。     
+&emsp;&emsp;null表示一个空对象指针，此处不应该有值。    
 &emsp;&emsp;&ensp;(1) 作为函数的参数，表示该函数的参数不是对象。    
 &emsp;&emsp;&ensp;(2) 作为对象原型链的终点。     
 &emsp;&emsp;&ensp;eg: Object.getPrototypeof(Object.prototype) // null      
