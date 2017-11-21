@@ -7,3 +7,4 @@
     [attribute$=value]   img[src$=".png"]  选择每一个src属性的值以".png"结尾的元素    
     [attribute*=value]   img[src*="photo"] 选择每一个src属性的值包含字符串"photo"的元素    
  
+2.移动端一像素问题
