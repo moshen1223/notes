@@ -11,5 +11,11 @@
     build.assetsSubDirectory: 'static'    
     build.assetsPublicPath: './'    
       
-2. 在vue组件中经常需要给style添加scoped属性来使得当前样式只作用于当前组件的节点。编译之后会将当前组件的节点添加一个像data-v-e0329592这样唯一属性的标识，也会给当前style的所有样式添加[data-v-e0329592]（eg: .user[data-v-e0329592]）， data-v-e0329592整个页面相同.
-  
+2. 在vue组件中经常需要给style添加scoped属性来使得当前样式只作用于当前组件的节点。编译之后会将当前组件的节点添加一个像data-v-e0329592这样唯一属性的标识，也会给当前style的所有样式添加[data-v-e0329592]（eg: .user[data-v-e0329592]）， data-v-e0329592整个页面相同.    
+
+3. 一组li，li包含input框("\<li>\<input type="text"/>\</li>")，通过v-for渲染的，现在需要实现通过拖拽更改行的位置的功能，改变DOM之后，v-for重新渲染之后input内的值又变成原来的值，并没有跟着DOM进行改变。    
+问题所在:    
+    Vue自己使用了重用DOM的优化，导致相同位置的元素会重用之前的DOM，所使用的Vue2.0中的`:key="index"`在数组元素改变位置后，``index``依旧没有改变，所以还是会按照之前的DOM顺序来渲染.    
+解决办法:    
+    1.使用``v-bind:key="item.id"``，这里每个数组元素的``id``应该是不同的;    
+    2.使用ES6中的symbol函数，从而使key值唯一;
