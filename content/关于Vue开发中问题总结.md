@@ -18,4 +18,6 @@
     Vue自己使用了重用DOM的优化，导致相同位置的元素会重用之前的DOM，所使用的Vue2.0中的`:key="index"`在数组元素改变位置后，``index``依旧没有改变，所以还是会按照之前的DOM顺序来渲染.    
 解决办法:    
     1.使用``v-bind:key="item.id"``，这里每个数组元素的``id``应该是不同的;    
-    2.使用ES6中的symbol函数，从而使key值唯一;
+    2.使用ES6中的symbol函数，从而使key值唯一;    
+    
+4. 对象存储到localstorage、sessionstorage中变成字符串，保存的时候JSON.stringify(object)解决，使用的时候JSON.parse(string).
