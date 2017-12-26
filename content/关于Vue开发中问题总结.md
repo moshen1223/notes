@@ -20,4 +20,14 @@
     1.使用``v-bind:key="item.id"``，这里每个数组元素的``id``应该是不同的;    
     2.使用ES6中的symbol函数，从而使key值唯一;    
     
-4. 对象存储到localstorage、sessionstorage中变成字符串，保存的时候JSON.stringify(object)解决，使用的时候JSON.parse(string).
+4. 对象存储到localstorage、sessionstorage中变成字符串，保存的时候JSON.stringify(object)解决，使用的时候JSON.parse(string).    
+
+5. vue开发环境下跨域，通过代理的方式解决。类似于    
+
+        proxyTable: {          
+          '/api/users/login': {
+            target: domain,
+            changeOrigin: true,
+            pathRewrite: {'^/api/users/login' : '/api/users/login'}
+          }
+        }
