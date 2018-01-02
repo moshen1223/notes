@@ -120,7 +120,8 @@
 12、javascript如何实现继承.    
 &emsp;1)向构造函数的原型添加方法    
 
-13、javascript中参数传递问题.    
+13、javascript中参数传递问题.    
+ 参数都是按值传递，对象一样。    
  
 14、promise原理以及使用.    
 
