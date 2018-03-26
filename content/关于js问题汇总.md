@@ -119,6 +119,7 @@
 
 12、javascript如何实现继承.    
 &emsp;1)向构造函数的原型添加方法    
+&emsp;2)使用ES6中的class和extends    
 
 13、javascript中参数传递问题.    
 &emsp;参数都是按值传递，对象一样。    
