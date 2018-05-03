@@ -56,8 +56,9 @@
 &emsp;&ensp;箭头函数几个特性： 不能被new、this被绑定为函数定义时的this且无法改变、不支持arguments    
 &emsp;&ensp;不能被new的原因：箭头函数内部没有constructor方法，也没有prototype    
 &emsp;&ensp;没有自己的this，箭头函数内的this值继承自外围函数值     
-    
-5、JS中检测数据类型的方式    
+&emsp;&ensp;arguments 使用ES6中的扩展运算符替代    
+
+5、JS中检测数据类型的方法    
 &emsp;1)typeof    
 &emsp;&ensp;局限性：typeof null => object；检测数组、正则返回object    
 &emsp;2)instanceof/constructor    
