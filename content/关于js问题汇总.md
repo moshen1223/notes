@@ -140,6 +140,33 @@
  
 19、requestanimationframe相比于setTimeout的优点.     
 
+20、关于函数声明和函数表达式提升问题    
+```
+{
+    var getName = function(){
+        console.log(2);
+    }
+    function getName (){
+        console.log(1);
+    }
+    getName();
+}
+```
+这个例子涉及到了变量声明提升和函数声明提升。函数声明提升，函数声明function getName(){}的声明会被提前到顶部。而函数表达式var getName = function(){}则表现出变量声明提升。因此在这种情况下，getName也是一个变量，因此这个变量的声明也将提升到底部，而变量的赋值依然保留在原来的位置。需要注意的是，函数优先，虽然函数声明和变量声明都会被提升，但是函数会首先被提升，然后才是变量。因此上面的函数可以转换成下面的样子:
+```
+{
+    function getName(){    //函数声明提升到顶部
+        console.log(1);
+    }
+    var getName;    //变量声明提升
+    getName = function(){    //变量赋值依然保留在原来的位置
+        console.log(2);
+    }
+    getName();    // 最终输出：2
+}
+```
+所以最终的输出结果是：2。在原来的例子中，函数声明虽然是在函数表达式后面，但由于函数声明提升到顶部，因此后面getName又被函数表达式的赋值操作给覆盖了，所以输出2。
+
 
 
 
