@@ -184,22 +184,22 @@
 	 
 			
 ###### 10、浏览器重排与重绘    
-重绘：元素外观的改变所触发的浏览器行为，不会带来重新布局，并不一定伴随重排。    
-重排：渲染树需要重新计算。    
-触发重排操作：    
-1.DOM元素的几何属性变化。    
-2.DOM树的结构变化。    
-3.获取某些属性。    
-当获取一些属性时，浏览器为取得正确的值也会触发重排。
-这些属性包括：offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、clientHeight、getComputedStyle() (currentStyle in IE)。所以，在多次使用这些值时应进行缓存。   
-4.改变元素的一些样式，调整浏览器窗口大小，滚动条出现等等也都将触发重排。    
+	重绘：元素外观的改变所触发的浏览器行为，不会带来重新布局，并不一定伴随重排。    
+	重排：渲染树需要重新计算。    
+	触发重排操作：    
+	  1.DOM元素的几何属性变化。    
+	  2.DOM树的结构变化。    
+	  3.获取某些属性。    
+	    当获取一些属性时，浏览器为取得正确的值也会触发重排。
+	    这些属性包括：offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、clientHeight、getComputedStyle() (currentStyle in IE)。所以，在多次使用这些值时应进行缓存。   
+	  4.改变元素的一些样式，调整浏览器窗口大小，滚动条出现等等也都将触发重排。    
 
-关于重排重绘的优化:    
-1.将多次改变样式属性的操作合并成一次操作。    
-2.将需要多次重排的元素，position属性设为absolute或fixed，这样此元素就脱离了文档流，它的变化不会影响到其他元素。    
-3.在内存中多次操作节点，完成后再添加到文档中去。    
-4.由于display属性为none的元素不在渲染树中，对隐藏的元素操作不会引发其他元素的重排。如果要对一个元素进行复杂的操作时，可以先隐藏它，操作完成后再显示。这样只在隐藏和显示时触发2次重排。    
-5.在需要经常取那些引起浏览器重排的属性值时，要缓存到变量。
+	关于重排重绘的优化:    
+	  1.将多次改变样式属性的操作合并成一次操作。    
+	  2.将需要多次重排的元素，position属性设为absolute或fixed，这样此元素就脱离了文档流，它的变化不会影响到其他元素。    
+	  3.在内存中多次操作节点，完成后再添加到文档中去。    
+	  4.由于display属性为none的元素不在渲染树中，对隐藏的元素操作不会引发其他元素的重排。如果要对一个元素进行复杂的操作时，可以先隐藏它，操作完成后再显示。这样只在隐藏和显示时触发2次重排。    
+	  5.在需要经常取那些引起浏览器重排的属性值时，要缓存到变量。
 
 	 
 			
