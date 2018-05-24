@@ -9,7 +9,7 @@ Promise是对象，所以身上有很多方法，通过这些方法可以获取�
 
 缺点    
 1) 一旦新建会立即执行，无法取消。
-2) 处于pending状态时，无法得知目前进展到哪一阶段。
+2) 处于pending状态时，无法得知目前进展到哪一阶段。
 3) 如果不设置回调函数，promise内部错误不会反应到外部。   
 ```
 let promise = new Promise(function(resolve, reject){
@@ -40,10 +40,10 @@ const promise = new Promise(function(resolve,reject){
     }
 })
 ```
-resolve函数作用，将Promise对象的状态从pending变为resolved，在异步操作成功时调用，并将异步操作的结果作为参数传递出去。    
+resolve函数作用，将Promise对象的状态从pending变为resolved，在异步操作成功时调用，并将异步操作的结果作为参数传递出去。    
 reject函数作用，将Promise对象的状态从pending变为rejected，在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。    
 
-Promise实例生成后可以用then分别指定resolved状态和rejected状态的回调函数。then方法接收两个回调函数作为参数，第一个回调函数是Promise对象状态变成resolved时调用，第二个是变为rejected时调用。第二个回调函数是可选的。这两个回调函数都接收Promise对象传出的值作为参数。    
+Promise实例生成后可以用then分别指定resolved状态和rejected状态的回调函数。then方法接收两个回调函数作为参数，第一个回调函数是Promise对象状态变成resolved时调用，第二个是变为rejected时调用。第二个回调函数是可选的。这两个回调函数都接收Promise对象传出的值作为参数。    
 ```
 promise.then(function(value){
     // success
@@ -52,7 +52,7 @@ promise.then(function(value){
 })
 ```
 [实例1(异步加载图片)](./imageload.js)    
-[实例2(ajax)](./ajax.js)    
+[实例2(ajax)](./ajax.js)    
 
 一个异步操作的结果是另一个异步操作。    
 ```
@@ -96,13 +96,13 @@ new Promise((resolve,reject)=>{
 // 2
 // 1
 ```
-一般来说，调用resolve或reject以后，Promise的使命就完成了，后继操作f放在then方法里边，而不应该写在resolve或reject的后面，最好在前面加上return语句。    
+一般来说，调用resolve或reject以后，Promise的使命就完成了，后继操作f放在then方法里边，而不应该写在resolve或reject的后面，最好在前面加上return语句。    
 
 ## Promise.prototype.then()
-Promise **实例**具有then方法，then方法是定义在原型对象Promise.prototype上的。作用是为实例添加状态改变时的回调函数。    
+Promise **实例**具有then方法，then方法是定义在原型对象Promise.prototype上的。作用是为实例添加状态改变时的回调函数。    
 
-then方法返回的是一个新的Promise实例，因此可以采用链式操作。
+then方法返回的是一个新的Promise实例，因此可以采用链式操作。
 
 ## Promise.prototype.catch()
-用于指定发生错误时的回调函数。Promise对象如果变为resolved状态会调用then方法指定的回调函数，如果异步操作抛出错误状态变为rejected会调用catch方法指定的回调函数，处理这个错误，如果then方法指定的回调函数在运行中抛出错误也会被catch方法捕获。    
+用于指定发生错误时的回调函数。Promise对象如果变为resolved状态会调用then方法指定的回调函数，如果异步操作抛出错误状态变为rejected会调用catch方法指定的回调函数，处理这个错误，如果then方法指定的回调函数在运行中抛出错误也会被catch方法捕获。    
 catch方法是then方法的另外一种形式 .then(null, rejection)
