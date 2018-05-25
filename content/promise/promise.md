@@ -129,7 +129,7 @@ promise.catch(function(error) {
 });
 // Error: test
 
-// 写法一
+// 写法一
 const promise = new Promise(function(resolve, reject){
     try{
         throw new Error('test')
@@ -141,7 +141,7 @@ promise.catch(function(error){
     console.log(error)
 });
 
-// 写法二
+// 写法二
 const promise = new Promise(function(resolve, reject){
     reject(new Error('test'));
 });
@@ -162,9 +162,9 @@ promise.then((value)=>{
     console.log(error)
 })
 ```
-Promise对象的错误具有'冒泡'性质，会一直向后传递，直到被捕获为止。所以一般不要在then方法里边定义Reject状态的回调函数即then的第二个参数，总是使用catch方法。这样做的优点： 可以捕获前面then方法执行中的错误。    
+Promise对象的错误具有'冒泡'性质，会一直向后传递，直到被捕获为止。所以一般不要在then方法里边定义Reject状态的回调函数即then的第二个参数，总是使用catch方法。这样做的优点： 可以捕获前面then方法执行中的错误。    
 如果没有使用catch方法指定错误处理的回调函数，Promise对象抛出的错误不会传递到外层代码，所以Promise对象后边要跟catch方法。    
-catch方法返回的还是一个Promise对象，后面还可以接着调用then方法。    
+catch方法返回的还是一个Promise对象，后面还可以接着调用then方法。    
 如果没有报错会跳过catch方法，继续执行then方法。
 
 ## Promise.prototype.finally()
@@ -175,19 +175,19 @@ promise
 .catch(error=>{})
 .finally(()=>{})
 ```
-finally方法的回调函数不接受任何参数，也就是说没办法知道前面的状态是fulfilled还是rejected。表明finally方法里边的操作是无状态的，不依赖Promise的执行结果。    
+finally方法的回调函数不接受任何参数，也就是说没办法知道前面的状态是fulfilled还是rejected。表明finally方法里边的操作是无状态的，不依赖Promise的执行结果。    
 
 ## Promise.all()
 Promise.all()方法用于将多个Promise实例包装成一个新的Promise实例。    
 ```
 const p = Promise.all([p1,p2,p3,...])
 ```
-Promise.all方法接收一个数组作为参数，p1,p2,p3...都是Promise实例，如果不是会调用Promise.resolve方法将参数转换为Promis实例再进一步处理。    
+Promise.all方法接收一个数组作为参数，p1,p2,p3...都是Promise实例，如果不是会调用Promise.resolve方法将参数转换为Promis实例再进一步处理。    
 p的状态有两种情况：    
-1) 只有p1,p2,p3...的状态都变成fulfilled，p的状态才会变成fulfilled，p1,p2,p3...的返回值组成一个数组，传递给p的回调函数。
-2) 只要p1,p2,p3...之中有一个被rejected，p的状态就变成rejected，此时第一个被reject的实例的返回值，会被传递给p的回调函数.    
-
-如果作为参数的Promise实例，自己定义了catch方法，一旦被rejected，并不会触发Promise.all()的catch方法。
+1) 只有p1,p2,p3...的状态都变成fulfilled，p的状态才会变成fulfilled，p1,p2,p3...的返回值组成一个数组，传递给p的回调函数。
+2) 只要p1,p2,p3...之中有一个被rejected，p的状态就变成rejected，此时第一个被reject的实例的返回值，会被传递给p的回调函数.    
+
+如果作为参数的Promise实例，自己定义了catch方法，一旦被rejected，并不会触发Promise.all()的catch方法。
 ```
 const p1 = new Promise((resolve,reject)=>{
     resolve('hello');
