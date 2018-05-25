@@ -210,3 +210,37 @@ Promise.race方法同样是将多个Promise实例包装成一个新的Promise实
 const p = Promise.race([p1,p2,p3...])
 ```
 只要p1,p2,p3之中有一个实例率先改变状态，p的状态就跟着改变。率先改变的Promise实例的返回值就传递给p的回调函数。    
+
+## Promise.resolve()
+Promise.resolve方法将现有对象转为Promise对象。
+```
+Promise.resolve('foo')
+// 等价于
+new Promise(resolve => resolve('foo'))
+```
+Promise.resolve方法的参数有四种情况：   
+1) **参数是一个Promise实例**
+如果参数是一个Promise实例，那么Promise.resolve将不做任何修改，原封不动返回这个实例。
+2) **参数是一个具有then方法的对象**
+```
+let thenable = {
+    then: function(resolve, reject){
+        resolve(123)
+    }
+}
+```
+Promise.resolve方法会将这个对象转为Promise对象，然后立即执行then方法。     
+3) **参数不是具有then方法的对象或根本不是对象**    
+如果参数是一个原始值，或者是一个不具有then方法的对象，那么Promise.resolve方法返回一个新的Promise对象，状态为Resolved。    
+4) **不带有任何参数**    
+不带有任何参数的情况直接返回一个Resolved状态的Promise对象。    
+立即resolve的Promise对象是在本轮“事件循环”结束时，而不是在下一轮“事件循环”开始时。    
+
+## Promise.reject()
+Promise.reject(reason)方法返回一个新的Promise实例，状态为Rejected。
+```
+let p = Promise.reject('error')
+// 等价于
+let p = new Promise((resolve, reject)=>reject('error'))
+```
+Promise.reject()方法的参数会原封不动地作为reject的理由变成后续方法的参数。
