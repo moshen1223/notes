@@ -150,7 +150,7 @@ promise.catch(function(error){
 })
 ```
 
-如果Promise状态已经变成resolved，再抛出错误是无效的。因为Promise的状态一旦改变，就永远保持改状态，不会再改变。
+如果Promise状态已经变成resolved，再抛出错误是无效的。因为Promise的状态一旦改变，就永远保持改状态，不会再改变。
 ```
 const promise = new Promise(function(resolve, reject){
     resolve('ok')
@@ -182,7 +182,7 @@ Promise.all()方法用于将多个Promise实例包装成一个新的Promise实�
 ```
 const p = Promise.all([p1,p2,p3,...])
 ```
-Promise.all方法接收一个数组作为参数，p1,p2,p3...都是Promise实例，如果不是会调用Promise.resolve方法将参数转换为Promis实例再进一步处理。    
+Promise.all方法接收一个数组作为参数，p1,p2,p3...都是Promise实例，如果不是，会调用Promise.resolve方法将参数转换为Promis实例再进一步处理。    
 p的状态有两种情况：    
 1) 只有p1,p2,p3...的状态都变成fulfilled，p的状态才会变成fulfilled，p1,p2,p3...的返回值组成一个数组，传递给p的回调函数。
 2) 只要p1,p2,p3...之中有一个被rejected，p的状态就变成rejected，此时第一个被reject的实例的返回值，会被传递给p的回调函数.    
@@ -202,7 +202,7 @@ Promise.all([p1,p2])
 
 // ['hello', Error: 'error']
 ```
-注释：p2有自己的catch方法，该方法返回的是一个新的Promise实例，p2指向的实际上是这个实例，该实例执行完catch方法之后，也会变成resolved状态，导致Promise.all()方法参数里面的两个实例都会resolved，因此会调用then方法指定的回调函数，而不会调用catch方法指定的回调函数。
+注释：p2有自己的catch方法，该方法返回的是一个新的Promise实例，p2指向的实际上是这个新实例，该实例执行完catch方法之后，也会变成resolved状态，导致Promise.all()方法参数里面的两个实例都会resolved，因此会调用then方法指定的回调函数，而不会调用catch方法指定的回调函数。
 
 ## Promise.race()
 Promise.race方法同样是将多个Promise实例包装成一个新的Promise实例。
@@ -219,7 +219,7 @@ Promise.resolve('foo')
 new Promise(resolve => resolve('foo'))
 ```
 Promise.resolve方法的参数有四种情况：   
-1) **参数是一个Promise实例**
+1) **参数是一个Promise实例**    
 如果参数是一个Promise实例，那么Promise.resolve将不做任何修改，原封不动返回这个实例。
 2) **参数是一个具有then方法的对象**
 ```
