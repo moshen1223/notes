@@ -96,7 +96,7 @@ new Promise((resolve,reject)=>{
 // 2
 // 1
 ```
-一般来说，调用resolve或reject以后，Promise的使命就完成了，后继操作f放在then方法里边，而不应该写在resolve或reject的后面，最好在前面加上return语句。    
+一般来说，调用resolve或reject以后，Promise的使命就完成了，后继操作放在then方法里边，而不应该写在resolve或reject的后面，最好在前面加上return语句。    
 
 ## Promise.prototype.then()
 Promise **实例**具有then方法，then方法是定义在原型对象Promise.prototype上的。作用是为实例添加状态改变时的回调函数。    
@@ -218,7 +218,7 @@ Promise.resolve('foo')
 // 等价于
 new Promise(resolve => resolve('foo'))
 ```
-Promise.resolve方法的参数有四种情况：   
+Promise.resolve方法的参数有四种情况：   
 1) **参数是一个Promise实例**
 如果参数是一个Promise实例，那么Promise.resolve将不做任何修改，原封不动返回这个实例。
 2) **参数是一个具有then方法的对象**
@@ -230,17 +230,17 @@ let thenable = {
 }
 ```
 Promise.resolve方法会将这个对象转为Promise对象，然后立即执行then方法。     
-3) **参数不是具有then方法的对象或根本不是对象**    
+3) **参数不是具有then方法的对象或根本不是对象**    
 如果参数是一个原始值，或者是一个不具有then方法的对象，那么Promise.resolve方法返回一个新的Promise对象，状态为Resolved。    
 4) **不带有任何参数**    
 不带有任何参数的情况直接返回一个Resolved状态的Promise对象。    
 立即resolve的Promise对象是在本轮“事件循环”结束时，而不是在下一轮“事件循环”开始时。    
 
 ## Promise.reject()
-Promise.reject(reason)方法返回一个新的Promise实例，状态为Rejected。
+Promise.reject(reason)方法返回一个新的Promise实例，状态为Rejected。
 ```
 let p = Promise.reject('error')
 // 等价于
 let p = new Promise((resolve, reject)=>reject('error'))
 ```
-Promise.reject()方法的参数会原封不动地作为reject的理由变成后续方法的参数。
+Promise.reject()方法的参数会原封不动地作为reject的理由变成后续方法的参数。
