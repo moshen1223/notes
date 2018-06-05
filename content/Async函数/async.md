@@ -57,7 +57,7 @@ async 函数返回的Promise对象，必须等到内部所有await命令后面�
     f().then(v => console.log(v))
     // 123
 ```
-await命令后面的Promise对象如果变成reject状态，则reject的参数会被catch方法的回调函数接收到。     
+await命令后面的Promise对象如果变成reject状态，则reject的参数会被catch方法的回调函数接收到。     
 只要一个await语句后面的Promise变为reject，那么整个async函数都会中断执行。
 ```
 async function f(){
