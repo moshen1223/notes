@@ -86,5 +86,9 @@ f().then(v => console.log(v));
 // error
 // hello
 ```
+### 使用注意点
+1、await命令后面的Promise对象，运行结果可能是rejected，所以最好把await命令放在try...catch代码块里边。     
+2、多个await命令后面的异步操作，如果不存在继发操作，最好让它们同时出发。缩短程序执行时间。    
+3、await命名只能用在async函数内，用在普通函数内报错。    
 
 
