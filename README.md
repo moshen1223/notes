@@ -9,4 +9,4 @@
 * [promise](./content/promise/readme.md)
 * [async](./content/Async函数/async.md)
 * [this](./content/this相关/this指向.md)
-* [js中正则表达式](./content/JS中正则学习/深入学习.md)
+* [js中正则表达式](./content/JS中正则学习/chapter1.md)
