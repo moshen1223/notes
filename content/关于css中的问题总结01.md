@@ -148,6 +148,7 @@
 	 IE盒模型的宽度：width = content;
 	 标准盒模型宽度：width = content + padding + border;    
 	 通俗的说：width设定之后，添加padding和border，标准盒模型会向外扩充，从而撑大盒子，而IE模型会向内填充，改变内容区域大小;    
+	 margin只是和位置有关，和盒模型的宽度没有关系。    
 	 box-sizing属性解决盒模型问题，有三个属性值：content-box|border-box|inherit;
 	 默认值content-box,此时遵循标准盒模型;
 	 如果值为border-box,遵循IE模型;
