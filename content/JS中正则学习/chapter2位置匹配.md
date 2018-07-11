@@ -34,10 +34,25 @@ $ 匹配结尾，在多行匹配中匹配行结尾。
 第4个，2和"."，是\w和\W之间的位置。    
 第5个，"."和“m”，是\W和\w之间的位置。    
 第6个，4和"$"，是\w和\W之间的位置。    
-\B是\b的反面的意思，非单词边界。
+
+\B是\b的反面意思，非单词边界。
 ```
     var str = '[js] lesson_2.mp4';
     var reg = /\B/g;
     console.log(str.replace(reg, '#'));  // => #[j#s]# l#e#s#s#o#n#_#2.m#p#4;
 ```
 说明：\w与\w、\W与\W、^与\W、\W与$之间的位置。
+### 2.2.3 （?=p）和（?!p）
+(?=p)正向先行断言(positive lookahead)和(?!p)负向先行断言(negative lookahead)。    
+(?=p)，其中p是一个子模式，即p前面的位置，或者说该位置后面的字符要匹配p。    
+```
+    var str = 'hello';
+    var reg = /(?=l)/g;
+    console.log(str.replace(reg, '#'));  // => he#l#lo
+```
+(?!p)就是(?=p)的反面意思。
+```
+    var str = 'hello';
+    var reg = /(?!l)/g;
+    console.log(str.replace(reg, '#'));  // => #h#ell#o#
+```
