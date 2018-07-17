@@ -56,5 +56,25 @@
     var reg = /(\d{4})-(\d{2})-(\d{2})/;
     var str = '2018-07-16';
     reg.test(str);
-    console.log(RegExp.$1);
+    console.log(RegExp.$1); // => 2018
+    console.log(RegExp.$2); // => 07
+    console.log(RegExp.$3); // => 16
+```
+### 3.2.2 替换
+把 yyyy-mm-dd 转成 mm/dd/yyyy
+```
+    var reg = /(\d{4})-(\d{2})-(\d{2})/
+    var str = '2018-07-17';
+    var result = str.replace(reg, function(){
+        return `${RegExp.$2}/${RegExp.$3}/${RegExp.$1}`;
+    })
+    console.log(result); // => 07/17/2018
+```
+简写形式
+```
+    var reg = /(\d{4})-(\d{2})-(\d{2})/
+    var str = '2018-07-17';
+    var result = str.replace(reg, "$2/$3/$1");
+    console.log(result) // => 07/17/2018
+
 ```
